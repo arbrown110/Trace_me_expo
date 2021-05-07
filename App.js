@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity, Alert, Image, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Alert, Image, SafeAreaView,  Platform } from 'react-native';
 
 export default function App() {
   const handlePress = () => console.log("Text clicked")
@@ -22,10 +22,12 @@ export default function App() {
       <Button 
         color="green"
         title="Press to continue" 
-        onPress={() => Alert.Alert(" Title", "The message you want to put",[
-          {text: "Enter", onPress: () => console.log("Enter")},
-          {text: "Exit", onPress: () => console.log("Exit")},
-        ])} />
+        // onPress={() => Alert.prompt("Title", "Message", text => console.log(text))}
+         onPress={() => Alert.Alert(" Title", "The message you want to put",[
+           {text: "Enter", onPress: () => console.log("Enter")},
+           {text: "Exit", onPress: () => console.log("Exit")},
+         ])}
+         />
     </SafeAreaView>
   );
 }
@@ -34,8 +36,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: Platform.OS === "android" ? Statusbar.currentHeight : 0,
+    paddingTop: Platform.OS === "Windows" ? Statusbar.currentHeight : 0
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 });
 
