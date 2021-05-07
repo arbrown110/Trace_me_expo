@@ -7,7 +7,11 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
      <Text onPress={handlePress}>Enter</Text>
-     <Image source={{
+     <Image
+      blurrRadius={5}
+      fadeDuration={3000}
+
+      source={{
        width: 200,
        height: 300,
        uri: "http://picsum.photos/200/300",
