@@ -1,14 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity, Alert, Image, SafeAreaView,  Platform } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Alert, Image, SafeAreaView,  Platform, Dimensions } from 'react-native';
 
 export default function App() {
-  const handlePress = () => console.log("Text clicked")
+  console.log(Dimensions.get("screen"));  // When rotated numbers don't change for dimensions
+  // const handlePress = () => console.log("Text clicked")
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{BackgroundColor: 'dodgerblue', width: 150, height: 70}}></View>
+      <View style={{
+        BackgroundColor: 'dodgerblue', 
+        width: "50%", height: 70
+        }}></View>
       //when expressing make sure it is half 
-     <Text onPress={handlePress}>Enter</Text>
+     {/* <Text onPress={handlePress}>Enter</Text>
       <TouchableOpacity onPress={() => console.log('Image being pressed')}>
       <Image
         blurrRadius={5}
@@ -29,7 +33,7 @@ export default function App() {
            {text: "Enter", onPress: () => console.log("Enter")},
            {text: "Exit", onPress: () => console.log("Exit")},
          ])}
-         />
+         /> */}
     </SafeAreaView>
   );
 }
