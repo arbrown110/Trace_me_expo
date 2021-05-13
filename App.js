@@ -1,9 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity, Alert, Image, SafeAreaView,  Platform, Dimensions } from 'react-native';
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+
 
 export default function App() {
-  console.log(Dimensions.get("screen"));  // When rotated numbers don't change for dimensions
+  const orientation = useDeviceOrientation ();
+  // or const {landscape} = useDeviceOrienattion(); to set and calculate dynamically 
+  // console.log(Dimensions.get("screen"));  // When rotated numbers don't change for dimensions
   // const handlePress = () => console.log("Text clicked")
   return (
     <SafeAreaView style={styles.container}>
