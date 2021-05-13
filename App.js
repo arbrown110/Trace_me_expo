@@ -9,8 +9,8 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <View style={{
         BackgroundColor: 'dodgerblue', 
-        width: "50%", height: 70
-        }}></View>
+        width: "100%", height: "30%",
+        }}></View> // to support oientations . You must change app.json to default for both portrait and landscape
       //when expressing make sure it is half 
      {/* <Text onPress={handlePress}>Enter</Text>
       <TouchableOpacity onPress={() => console.log('Image being pressed')}>
