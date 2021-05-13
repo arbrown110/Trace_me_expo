@@ -7,6 +7,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={{BackgroundColor: 'dodgerblue', width: 150, height: 70}}></View>
+      //when expressing make sure it is half 
      <Text onPress={handlePress}>Enter</Text>
       <TouchableOpacity onPress={() => console.log('Image being pressed')}>
       <Image
