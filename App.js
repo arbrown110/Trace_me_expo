@@ -6,6 +6,7 @@ export default function App() {
   const handlePress = () => console.log("Text clicked")
   return (
     <SafeAreaView style={styles.container}>
+      <View style={{BackgroundColor: 'dodgerblue', width: 150, height: 70}}></View>
      <Text onPress={handlePress}>Enter</Text>
       <TouchableOpacity onPress={() => console.log('Image being pressed')}>
       <Image
